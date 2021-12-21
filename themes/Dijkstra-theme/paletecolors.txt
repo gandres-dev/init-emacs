@@ -1,0 +1,45 @@
+
+Color que me gustaron:
+
+background azul-marino- #14191f
+otro azul- #111928
+
+modeline gris - #c0c0c0
+
+yellow-light - #F0DFAF
+
+orange - #edb0a0
+
+waring red - #F28B86
+
+rosa - #f66bce
+#ed36c0
+#e52eb9
+#df48cc
+
+Fosrecente
+naranja - #ff8c00, #fcb763, #ffc580, #ffd19a, #ffddb4
+verde - #01f801
+azul - #01f
+rosa- #F0D 
+
+amarillo mostaza - #ffe173
+
+
+
+interactive background - #1e2338
+---- ganadores
+#689bde keywords
+#e0e4d1 or #f7f8b2 funciones
+#9da599 constantes
+#657e65 comentarios
+
+
+
+
+
+----------------------------
+#375f7c - azul marino
+#81b0d2
+#87a781 verde
+#667765
