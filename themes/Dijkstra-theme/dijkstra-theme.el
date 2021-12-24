@@ -74,7 +74,7 @@
    '(font-lock-doc-face ((t (:foreground "#657e65")))) 
 
    ;; Function names
-   '(font-lock-function-name-face ((t (:foreground "#e0e4d1"))))
+   '(font-lock-function-name-face ((t (:foreground "#e5eec1")))) ;; #e0e4d1
 
    ;; Keywords
    '(font-lock-keyword-face ((t (:foreground "#689bde"))))

@@ -11,7 +11,7 @@
 
 
 (add-hook 'prog-mode-hook 'auto-fill-mode) ;; Rompe las lineas cuando son muy grandes.
-
+(add-hook 'prog-mode-hook 'linum-mode) ;; Agrega numero de lineas
 
 (global-set-key (kbd "C-'") 'isearch-forward)
 (global-set-key (kbd "C-x C-b") 'counsel-ibuffer)
@@ -58,3 +58,29 @@
   (define-key company-search-map (kbd "C-j") 'company-select-next)
   (define-key company-search-map (kbd "C-k") 'company-select-previous)
   )
+
+
+;; Vamos tratar de instalar elpy manualmente, primero descargamos dependencias
+;; - Company
+;; - highlight-indentation
+;; - pyvenv
+;; - yasnippet
+;; - s
+(use-package highlight-indentation
+  :ensure t)
+
+(use-package s
+  :ensure t)
+
+(use-package pyvenv
+  :ensure t)
+
+
+(add-to-list 'load-path "~/.emacs.d/plugins/elpy")
+(load "elpy")
+(load "elpy-rpc")
+(load "elpy-shell")
+(load "elpy-profile")
+(load "elpy-refactor")
+(load "elpy-django")
+(elpy-enable) ;; Enable Elpy in all future Python buffers.
