@@ -75,6 +75,13 @@
 (use-package pyvenv
   :ensure t)
 
+(setq python-shell-interpreter "python3"
+      python-shell-interpreter-args "-i")
+
+(setq elpy-rpc-python-command "python3")
+
+(setq python-indent-guess-indent-offset t)  
+(setq python-indent-guess-indent-offset-verbose nil)
 
 (add-to-list 'load-path "~/.emacs.d/plugins/elpy")
 (load "elpy")
