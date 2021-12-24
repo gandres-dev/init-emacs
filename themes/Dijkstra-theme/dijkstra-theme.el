@@ -19,7 +19,7 @@
 (let ((dijkstra-background      "#111928") ;; azul 7
       ;;(dijkstra-background      "#0C1A29")
       ;;(dijkstra-background      "#0d101e") ;; azul 1
-      (dijkstra-foreground      "#ededed")
+      (dijkstra-foreground      "#d6d3d3");; #ededed
       (dijkstra-mid-gray        "#666666")
       (dijkstra-darker-gray     "#14191f")
       (dijkstra-white           "#FFFFFF")
@@ -45,6 +45,8 @@
    `(cursor  ((t (:background ,dijkstra-off-white))))
    ;;Marcado de la linea actual si es que esta activado.
    `(hl-line ((t (:background ,dijkstra-mid-gray))))
+   
+   `(tooltip ((t (:background ,dijkstra-background))))
 
    ;; --------------------Mode line --------------------
    ;;`(mode-line ((t (:box nil :foreground ,dijkstra-foreground :background ,dijkstra-dark-blue))))
@@ -131,14 +133,14 @@
    ;; Gris muy plateado este grey59: #969696
 
    ;;-------------------- display-line-numbers-mode--- (otra modo como linum-mode, la diferencia puede resaltar el marcado linea actual)------
-   ;;'(line-number ((t (:inherit (shadow default) :foreground "#4a4a4a")))) ;; letras frises
-   '(line-number ((t (:inherit (shadow default) :foreground "#656666")))) ;; letras grises
+   '(line-number ((t (:inherit (shadow default) :foreground "#4a4a4a")))) ;; letras frises
+   ;;'(line-number ((t (:inherit (shadow default) :foreground "#656666")))) ;; letras grises
 
    ;; Sin background
    ;;'(line-number-current-line ((t (:inherit line-number :foreground "#b5b5b5"))))
 
    ;; Con background
-   '(line-number-current-line ((t (:inherit line-number :background "#373B41" :foreground "#F6F3E8")))) ;; Con background
+   ;;'(line-number-current-line ((t (:inherit line-number :background "#373B41" :foreground "#F6F3E8"))))
    
    ;; ----------- treemacs ----------------------------
    '(treemacs-fringe-indicator-face ((t (:foreground "#86B187"))))

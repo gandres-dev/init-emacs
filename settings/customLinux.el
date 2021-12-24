@@ -11,7 +11,8 @@
 
 
 (add-hook 'prog-mode-hook 'auto-fill-mode) ;; Rompe las lineas cuando son muy grandes.
-(add-hook 'prog-mode-hook 'linum-mode) ;; Agrega numero de lineas
+;;(add-hook 'prog-mode-hook 'linum-mode) ;; Agrega numero de lineas
+(add-hook 'prog-mode-hook 'display-line-numbers-mode) ;; Agrega numero de lineas (mejorado)
 
 (global-set-key (kbd "C-'") 'isearch-forward)
 (global-set-key (kbd "C-x C-b") 'counsel-ibuffer)
