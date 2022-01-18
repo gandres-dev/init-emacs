@@ -14,6 +14,11 @@
 ;;(add-hook 'prog-mode-hook 'linum-mode) ;; Agrega numero de lineas
 (add-hook 'prog-mode-hook 'display-line-numbers-mode) ;; Agrega numero de lineas (mejorado)
 
+;; (setq display-line-numbers 'relative) Only for one buffer
+(setq display-line-numbers-type 'relative) ;; For all buffers
+;; eg: C-u 7 C-p
+
+
 (global-set-key (kbd "C-'") 'isearch-forward)
 (global-set-key (kbd "C-x C-b") 'counsel-ibuffer)
 (global-set-key (kbd "C-x <up>") 'counsel-imenu)

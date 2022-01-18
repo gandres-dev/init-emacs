@@ -403,7 +403,8 @@ Including indent-buffer, which should not be called automatically on save."
 ;; Eliminar pares de parentersis, con la funcion integrada de emacs delete-pair
 ;; Debe colocarse al inicio del parentesis
 ;(global-set-key (kbd "M-p") 'delete-pair)
-(global-set-key (kbd "M-s-p") 'delete-pair)
+;; (global-set-key (kbd "M-s-p") 'delete-pair)
+(global-set-key (kbd "s-d") 'delete-pair)
 
 ;; S - Es la tecla shift (Uppercase)
 ;; s - Tecla windows (Lowercase)
@@ -442,8 +443,8 @@ Including indent-buffer, which should not be called automatically on save."
 
 (global-set-key (kbd "C-S-k") 'copy-line)
 (global-set-key (kbd "C-S-p") 'paste-line)
-(global-set-key (kbd "C-k") 'kill-all-line)
-(global-set-key (kbd "s-k") 'kill-line)
+;;(global-set-key (kbd "C-k") 'kill-all-line)
+;;(global-set-key (kbd "s-k") 'kill-line)
 ;; C-M-k kill-sexp
 
 ;; Narrowing - escribir en una seccion en particular
@@ -567,3 +568,5 @@ Saves to a temp file and puts the filename in the kill ring."
 ; en el archivo pluginsuser/customFacesMe.el tienes que limpiarlo si cambias de tema, ya que se quedaran
 ; guardados las configuraciones del tema anterior, esto solo si tiene tiene informacion el archivo customFacesme.el
 
+
+;; C-h w : for find command key

@@ -3,3 +3,4 @@ cache
 elpa
 transient
 elpy
+.mc-lists.el
