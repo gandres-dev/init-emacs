@@ -90,10 +90,50 @@
 
 
 
-(use-package expand-region
+
+(use-package emmet-mode
   :ensure t
+  :hook ((html-mode       . emmet-mode)
+         (css-mode        . emmet-mode)
+         (web-mode        . emmet-mode)
+         ;; (sgml-mode       . emmet-mode) ;Auto-start on any markup modes
+         ;; (js-mode         . emmet-mode)
+         ;; (js-jsx-mode     . emmet-mode) ; Tiene que ver con react
+         ;; (typescript-mode . emmet-mode)
+         )
   :config
-  ;(global-set-key (kbd "C-=") 'er/expand-region)
-  (global-set-key (kbd "C-@") 'er/expand-region)
-  (global-set-key (kbd "s-SPC") 'er/expand-region)
+  ;;(setq emmet-insert-flash-time 0.001) ; effectively disabling it
+  (define-key emmet-mode-keymap (kbd "<C-return>") 'open-line-below)
+  (define-key emmet-mode-keymap (kbd "C-.") 'emmet-expand-line)
+
+  )
+
+
+(add-hook 'prog-mode-hook 'auto-fill-mode) ;; Rompe las lineas cuando son muy grandes.
+;;(add-hook 'prog-mode-hook 'linum-mode) ;; Agrega numero de lineas
+(add-hook 'prog-mode-hook 'display-line-numbers-mode) ;; Agrega numero de lineas (mejorado)
+
+(global-set-key (kbd "C-'") 'isearch-forward)
+(global-set-key (kbd "C-x C-b") 'counsel-ibuffer)
+(global-set-key (kbd "C-x <up>") 'counsel-imenu)
+(global-set-key (kbd "C-x <down>") 'counsel-switch-buffer)
+
+
+
+(global-set-key (kbd "C-M-k") 'counsel-switch-buffer)
+(global-set-key (kbd "C-M-j") 'counsel-ibuffer)
+
+(global-set-key (kbd "C-M-l") 'next-buffer)
+(global-set-key (kbd "C-M-h") 'previous-buffer)
+
+
+(global-set-key [remap describe-function] 'counsel-describe-function)
+(global-set-key [remap describe-variable] 'counsel-describe-variable)
+
+(with-eval-after-load 'company
+  (define-key company-active-map (kbd "C-j") 'company-select-next)
+  (define-key company-active-map (kbd "C-k") 'company-select-previous)
+  
+  (define-key company-search-map (kbd "C-j") 'company-select-next)
+  (define-key company-search-map (kbd "C-k") 'company-select-previous)
   )
