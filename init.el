@@ -41,8 +41,8 @@
       ;;(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/Dijkstra-theme/")
       ;;(load-theme 'dijkstra t)
 
-      ;;(load-theme 'deeper-blue)
-      (load-theme 'manoj-dark)
+      (load-theme 'deeper-blue)
+      ;;(load-theme 'manoj-dark)
       (if  (eq (car custom-enabled-themes) 'deeper-blue)
           (progn
             (custom-set-faces
@@ -91,7 +91,7 @@
         )
       (if  (eq (car custom-enabled-themes) 'manoj-dark)
           (progn
-            (add-to-list 'auto-mode-alist '("\\.html\\'" . html-mode))
+            ;;(add-to-list 'auto-mode-alist '("\\.html\\'" . html-mode))
             (custom-set-faces
              ;; Web-mode
              '(web-mode-doctype-face ((t (:foreground "lightblue"))))
@@ -123,6 +123,8 @@
              '(mode-line-inactive ((t (:box nil :background "#666666" :foreground "#d0dfe6"))))
              '(mode-line-buffer-id ((t (:box nil :foreground "black" ))))
              '(company-tooltip ((t (:background "black")))) ;Color fondo
+
+             '(tooltip ((t (:background "black"))))
              )
             )
           
@@ -137,8 +139,23 @@
     ;; Search file: M-x ffap
     (load-theme 'manoj-dark)
     (custom-set-faces
+     ;;'(mode-line ((t (:box nil :height 1.0 :foreground "#000000" :background "#B4B4B4"))))
+     ;;'(mode-line-inactive ((t (:box nil :background "#666666" :foreground "#d0dfe6"))))
+     ;;'(mode-line-buffer-id ((t (:box nil :foreground "black" ))))
+     ;;'(tooltip ((t (:background "black"))))
      '(company-tooltip ((t (:background "black")))) ;Color fondo
      )
+    ;; Preview-emmet C-u C-j
+    (add-hook 'html-mode-hook (lambda () (electric-pair-mode -1)))
+    ;;(add-hook 'html-mode-hook 'emmet-preview-mode)
+
+    (defun my-html-hook ()
+      "Hook for html mode"
+      (define-key html-mode-map (kbd "C-c ,") 'sgml-close-tag)
+      (define-key html-mode-map (kbd "C-c o") 'browse-url-of-file)
+      (emmet-preview-mode))
+    (add-hook 'html-mode-hook 'my-html-hook)
+    
     (setq custom-file "~/.emacs.d/plugins/packagesforTerm.el")
     (global-company-mode 1)
     (load custom-file)    
