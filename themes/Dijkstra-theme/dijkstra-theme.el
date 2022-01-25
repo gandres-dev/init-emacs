@@ -75,8 +75,8 @@
    '(font-lock-comment-face ((t (:foreground "#657e65" :slant italic))))
    '(font-lock-doc-face ((t (:foreground "#657e65")))) 
 
-   ;; Function names
-   '(font-lock-function-name-face ((t (:foreground "#e5eec1")))) ;; #e0e4d1
+   ;; Function names #f1f3ca
+   '(font-lock-function-name-face ((t (:foreground "#fff4cc")))) ;; #e0e4d1 #e5eec1
 
    ;; Keywords
    '(font-lock-keyword-face ((t (:foreground "#689bde"))))
@@ -133,7 +133,7 @@
    ;; Gris muy plateado este grey59: #969696
 
    ;;-------------------- display-line-numbers-mode--- (otra modo como linum-mode, la diferencia puede resaltar el marcado linea actual)------
-   '(line-number ((t (:inherit (shadow default) :foreground "#4a4a4a")))) ;; letras frises
+   ;;'(line-number ((t (:inherit (shadow default) :foreground "#4a4a4a")))) ;; letras frises
    ;;'(line-number ((t (:inherit (shadow default) :foreground "#656666")))) ;; letras grises
 
    ;; Sin background
@@ -141,6 +141,10 @@
 
    ;; Con background
    ;;'(line-number-current-line ((t (:inherit line-number :background "#373B41" :foreground "#F6F3E8"))))
+
+   '(line-number ((t (:inherit (shadow default) :foreground "#7c7d7d")))) ;; letras grises
+   '(line-number-current-line ((t (:inherit line-number :foreground "#d0cfcc"))))
+   ;; #3a3a3a
    
    ;; ----------- treemacs ----------------------------
    '(treemacs-fringe-indicator-face ((t (:foreground "#86B187"))))

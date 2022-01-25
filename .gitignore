@@ -3,3 +3,6 @@ cache
 elpa
 transient
 elpy
+.lsp-session-v1
+.mc-lists.el
+skewer-cache/

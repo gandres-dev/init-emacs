@@ -27,6 +27,8 @@
   (add-hook 'java-mode-hook #'yas-minor-mode)
   (add-hook 'org-mode-hook #'yas-minor-mode)
   (add-hook 'python-mode-hook #'yas-minor-mode)
+  (add-hook 'js-mode-hook #'yas-minor-mode)
+  (add-hook 'js2-mode-hook #'yas-minor-mode)
   ;; (add-hook 'prog-mode-hook #'yas-minor-mode)  
 )
 
@@ -318,4 +320,21 @@
     :bind (:map dired-mode-map
                 (")" . dired-git-info-mode)))
 
+
+;; (use-package js2-mode
+;;   :mode
+;;    (("\\.js\\'" . js2-mode))
+;;   )
+
+(add-hook 'js2-mode-hook 'skewer-mode)
+(add-hook 'css-mode-hook 'skewer-css-mode)
+(add-hook 'html-mode-hook 'skewer-html-mode)
+;;(add-hook 'web-mode-hook 'skewer-html-mode)
+;;(add-to-list 'auto-mode-alist '("\\.html\\'" . html-mode))
+
+
+;; (use-package lsp-mode
+;;   :ensure t)
+;; npm install -g javascript-typescript-langserver
+;; M-x lsp
 

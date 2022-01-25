@@ -3,7 +3,13 @@
 ;;(set-face-attribute 'default nil :font "DejaVu Sans Mono" :height 135)
 ;;(set-face-attribute 'default nil :font "Source Code Pro" :height 140)
 ;;(set-face-attribute 'default nil :font "Source Code Pro" :height 160)
-(set-face-attribute 'default nil :font "DejaVu Sans Mono" :height 160)
+;;(set-face-attribute 'default nil :font "DejaVu Sans Mono" :height 160)
+;;(set-face-attribute 'default nil :font "Cascadia Code" :height 160)
+;;(set-face-attribute 'default nil :font "Liberation Mono" :height 160)
+;;(set-face-attribute 'default nil :font "Fira Code" :height 160)
+
+;;(set-face-attribute 'default nil :font "Fira Code" :height 170)
+(set-face-attribute 'default nil :font "Jetbrains Mono" :height 170)
 
 ;; Adjustar ventana para monitor 24"
 (when window-system (set-frame-size (selected-frame) 101 28)) ;; Tamanio de la ventana
@@ -85,3 +91,14 @@
 (load "elpy-refactor")
 (load "elpy-django")
 (elpy-enable) ;; Enable Elpy in all future Python buffers.
+
+;; Disable msg 'Can't guess python-indent-offset, using defaults 4'
+(setq python-indent-guess-indent-offset t)  
+(setq python-indent-guess-indent-offset-verbose nil)
+
+;; Jupyter console (recommended for interactive Python)
+(setq python-shell-interpreter "jupyter"
+      python-shell-interpreter-args "console --simple-prompt"
+      python-shell-prompt-detect-failure-warning nil)
+(add-to-list 'python-shell-completion-native-disabled-interpreters
+             "jupyter")

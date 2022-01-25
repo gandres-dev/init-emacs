@@ -442,9 +442,13 @@ Including indent-buffer, which should not be called automatically on save."
 
 (global-set-key (kbd "C-S-k") 'copy-line)
 (global-set-key (kbd "C-S-p") 'paste-line)
-(global-set-key (kbd "C-k") 'kill-all-line)
-(global-set-key (kbd "s-k") 'kill-line)
+;;(global-set-key (kbd "C-k") 'kill-all-line) ;; Ya existe C-S-backspace
+;;(global-set-key (kbd "s-k") 'kill-line) ;; Ya existe
+;; C-u 0 C-k: Kill back to the beginning of the sentence
 ;; C-M-k kill-sexp
+;; M-k :Kill forward to the end of the sentence (kill-sentence).
+;; C-x DEL: Kill back to the beginning of the sentence (backward-kill-sentence).
+;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Killing-by-Lines.html
 
 ;; Narrowing - escribir en una seccion en particular
 ;;C-x n n  (narrow-to-region)
@@ -567,3 +571,22 @@ Saves to a temp file and puts the filename in the kill ring."
 ; en el archivo pluginsuser/customFacesMe.el tienes que limpiarlo si cambias de tema, ya que se quedaran
 ; guardados las configuraciones del tema anterior, esto solo si tiene tiene informacion el archivo customFacesme.el
 
+(defun my-kill-thing-at-point (thing)
+  "Kill the `thing-at-point' for the specified kind of THING."
+  (let ((bounds (bounds-of-thing-at-point thing)))
+    (if bounds
+        (kill-region (car bounds) (cdr bounds))
+      (error "No %s at point" thing))))
+
+(defun my-kill-word-at-point ()
+  "Kill the word at point."
+  (interactive)
+  (my-kill-thing-at-point 'word))
+
+(global-set-key (kbd "C-S-d") 'my-kill-word-at-point)
+
+;; find-file-at-point function (which is also aliased to ffap
+;; (ffap-bindings)
+(global-set-key (kbd "C-c C-g") 'ffap) ;; Ya existe
+
+(global-set-key (kbd "C-c C-z") 'visual-line-mode)
