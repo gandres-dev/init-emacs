@@ -570,3 +570,4 @@ Saves to a temp file and puts the filename in the kill ring."
 
 
 ;; C-h w : for find command key
+(global-set-key (kbd "M-g M-f") 'ffap)

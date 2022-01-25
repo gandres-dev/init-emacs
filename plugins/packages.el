@@ -27,6 +27,7 @@
   (add-hook 'java-mode-hook #'yas-minor-mode)
   (add-hook 'org-mode-hook #'yas-minor-mode)
   (add-hook 'python-mode-hook #'yas-minor-mode)
+  (add-hook 'js-mode-hook #'yas-minor-mode)
   ;; (add-hook 'prog-mode-hook #'yas-minor-mode)  
 )
 
@@ -317,5 +318,15 @@
     :ensure t
     :bind (:map dired-mode-map
                 (")" . dired-git-info-mode)))
+
+;; https://www.reddit.com/r/emacs/comments/cosddh/does_anyone_have_javascript_autocomplete_working/
+;; (use-package js2-mode
+;;   :ensure t
+;;   :mode
+;;   (("\\.js\\'" . js2-mode)))
+
+
+
+
 
 
